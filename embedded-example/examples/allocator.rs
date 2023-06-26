@@ -1,12 +1,16 @@
 //! How to use the heap and a dynamic memory allocator
 //!
-//! This example depends on the alloc-cortex-m crate so you'll have to add it to your Cargo.toml:
+//! This example depends on the embedded_alloc crate so you'll have to add it to your Cargo.toml:
 //!
 //! ``` text
 //! # or edit the Cargo.toml file manually
-//! $ cargo add alloc-cortex-m
+//! $ cargo add embedded_alloc
 //! ```
 //!
+//! run with
+//! ```
+//! cargo +nightly build --example allocator
+//! ```
 //! ---
 
 #![feature(alloc_error_handler)]
@@ -38,7 +42,7 @@ fn main() -> ! {
     // Growable array allocated on the heap
     let xs = vec![0, 1, 2];
 
-    hprintln!("{:?}", xs).unwrap();
+    hprintln!("{:?}", xs);
 
     // exit QEMU
     // NOTE do not run this on hardware; it can corrupt OpenOCD state

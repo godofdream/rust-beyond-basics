@@ -1,4 +1,9 @@
-# `cortex-m-quickstart`
+Für die Schulung hangeln wir uns am embedded rust book:
+
+https://docs.rust-embedded.org/book/
+
+
+# Original `cortex-m-quickstart` readme
 
 > A template for building applications for ARM Cortex-M microcontrollers
 

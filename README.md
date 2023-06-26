@@ -2,10 +2,26 @@
 Schulungsunterlagen für den Kurs "Rust für Fortgeschrittene"
 
 
+### Folien:
+https://docs.google.com/presentation/d/1zKrAIYu4JKYaCPUAr73H02BAcXxT_MhTmAZyzHK0UyQ/edit?usp=sharing
+
+### Slack beitreten:
+
+https://join.slack.com/t/happy-it-workspace/shared_invite/zt-1y0o1ph42-SHmlMMzrVL5X~4YrKaxKkQ
+
 # Vorbereitungen am Tag 1
 ```
-# installieren von rust mit rustup
+# installieren/updaten von rust mit rustup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+#für manche Beispiele Brauchen wir nightly features
+rustup toolchain install nightly
+rustup default nightly
+rustup component add rust-src
+
+# installieren der verschiedenen Architekturen für die einzelnen Beispiele
+rustup target add thumbv7m-none-eabi
+rustup target add wasm32-wasi
 
 # alle example Projekte mit abhängigkeiten holen und bauen
 cargo build

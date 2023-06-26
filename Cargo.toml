@@ -15,8 +15,9 @@ members = [
     "generic-example",
     "iter-example",
     "lifetime-example",
-    "rc-example"
+    "rc-example",
+    "eframe_template"
 ]
-
+resolver = "2"
 [profile.release]
 debug = true # we need debugging symbols for flamegraph

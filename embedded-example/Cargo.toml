@@ -6,7 +6,7 @@ name = "embedded-example"
 version = "0.1.0"
 
 [dependencies]
-cortex-m = "0.7.7"
+cortex-m = { version = "0.7.7", features = ["critical-section-single-core"]}
 cortex-m-rt = "0.7.3"
 cortex-m-semihosting = "0.5.0"
 panic-halt = "0.2.0"
@@ -15,8 +15,6 @@ embedded-alloc = "0.5.0"
 # Uncomment for the panic example.
 # panic-itm = "0.4.1"
 
-# Uncomment for the allocator example.
-# alloc-cortex-m = "0.4.0"
 
 # Uncomment for the device example.
 # Update `memory.x`, set target to `thumbv7em-none-eabihf` in `.cargo/config`,
