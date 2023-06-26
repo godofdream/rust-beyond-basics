@@ -1,0 +1,22 @@
+[workspace]
+members = [
+    "any-example",
+    "const-function",
+    "criterion-example",
+    "flamegraph-example",
+    "tokio-example",
+    "pin-example",
+    "embedded-example",
+    "async-std-example",
+    "wasm-example",
+    "actix-web-example",
+    "rocket-example",
+    "trait-example",
+    "generic-example",
+    "iter-example",
+    "lifetime-example",
+    "rc-example"
+]
+
+[profile.release]
+debug = true # we need debugging symbols for flamegraph
