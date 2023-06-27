@@ -2,7 +2,7 @@
 extern crate serde;
 
 use actix_web::middleware::Logger;
-use actix_web::{get, web, App, Error, HttpResponse, HttpServer, Responder};
+use actix_web::{get, put, web, App, Error, HttpResponse, HttpServer, Responder};
 use diesel::{prelude::*};
 use diesel_async::pooled_connection::deadpool::Pool;
 use diesel_async::pooled_connection::AsyncDieselConnectionManager;
@@ -51,6 +51,19 @@ async fn get_product(product_name: web::Path<String>) -> Result<HttpResponse, Er
     Ok(HttpResponse::Ok().json(result))
 }
 
+#[put("/product/")]
+async fn put_product(my_product: web::Json<product::Product>) -> Result<HttpResponse, Error> {
+    let mut connection = crate::DATABASE
+        .get()
+        .await
+        .map_err(actix_web::error::ErrorInternalServerError)?;
+    diesel::insert_into(product::products::table)
+             .values(my_product.0)
+             .execute(&mut connection)
+             .await.map_err(actix_web::error::ErrorInternalServerError)?;
+            Ok(HttpResponse::Ok().body(""))
+}
+
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     dotenv::dotenv().ok();
@@ -61,8 +74,9 @@ async fn main() -> std::io::Result<()> {
             .service(index)
             .service(hello)
             .service(get_product)
+            .service(put_product)
     })
-    .bind(("127.0.0.1", 8080))?
+    .bind(("0.0.0.0", 8081))?
     .run()
     .await
 }
