@@ -22,6 +22,7 @@ rustup component add rust-src
 # installieren der verschiedenen Architekturen für die einzelnen Beispiele
 rustup target add thumbv7m-none-eabi
 rustup target add wasm32-wasi
+rustup target add wasm32-unknown-unknown
 
 # alle example Projekte mit abhängigkeiten holen und bauen
 cargo build
