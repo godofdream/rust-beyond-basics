@@ -1,0 +1,24 @@
+# Task: Building a Command-Line Todo List
+
+Description:
+Create a command-line todo list application using Rust. The application should allow users to add tasks, mark tasks as completed, view the list of tasks, and remove tasks. 
+
+Here are the specific requirements:
+
+The application should have the following commands:
+
+add <task>: Adds a new task to the todo list.
+complete <task_index>: Marks the task at the specified index as completed.
+list: Displays the list of tasks with their indices.
+remove <task_index>: Removes the task at the specified index from the list.
+The todo list should be stored in memory using appropriate data structures.
+
+The application should handle incorrect command usage gracefully and provide meaningful error messages.
+
+Implement appropriate error handling mechanisms to handle potential errors during the execution of commands.
+
+The application should have a clean and user-friendly interface with clear instructions.
+
+Bonus (Optional):
+Add functionality to persist the todo list to a file so that it can be loaded and saved between runs.
+Implement additional features such as editing tasks, prioritizing tasks, or filtering tasks based on their status.
