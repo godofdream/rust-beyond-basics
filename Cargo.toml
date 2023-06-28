@@ -16,7 +16,9 @@ members = [
     "iter-example",
     "lifetime-example",
     "rc-example",
-    "eframe_template"
+    "eframe_template",
+    "task-tokio",
+    "mimalloc-example"
 ]
 resolver = "2"
 [profile.release]
