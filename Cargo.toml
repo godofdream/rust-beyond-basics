@@ -20,7 +20,8 @@ members = [
     "task-tokio",
     "mimalloc-example",
     "test-example",
-    "asm-example"
+    "asm-example",
+    "simd-example"
 ]
 resolver = "2"
 [profile.release]
