@@ -19,7 +19,7 @@ impl<T> Point<T> {
 
 fn main() {
     let integer_point = Point::new(5, 10);
-    let float_point = Point::new(3.14, 6.28);
+    let float_point = Point::new(3.15, 6.30);
 
     println!(
         "Integer Point: x = {}, y = {}",
