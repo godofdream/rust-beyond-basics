@@ -21,6 +21,7 @@ members = [
     "asm-example",
     "simd-example",
     "ini_parser",
+    "multiprocessing-example"
 ]
 resolver = "2"
 [profile.release]
