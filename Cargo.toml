@@ -19,7 +19,9 @@ members = [
     "mimalloc-example",
     "test-example",
     "asm-example",
-    "simd-example"
+    "simd-example",
+    "mob-programming",
+    "embedded-example"
 ]
 resolver = "2"
 [profile.release]
